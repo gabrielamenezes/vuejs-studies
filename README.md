@@ -61,3 +61,19 @@ created é uma função que é chamada assim que a instância do vue é criada.
 * combinar, somar ou diminuir valores
 
 Computed é um sistema muito inteligente, ele só executa a função quando solicitado, depois faz um cache do valor, só atualizando caso os dados originais sofram alguma modificação.
+
+## v-model
+- quando temos qualquer input ou um campo que recebe um dado, o v-model vai ser o valor daquele dado
+
+```html
+<!--o v-model especifica para qual variável esse valor que virá do input está indo-->
+<input type="text" v-model="name">
+```
+
+```js
+var app = new Vue({
+    data: {
+        name: ''; //o nome digitado no input será atribuido aqui
+    }
+})
+```

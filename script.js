@@ -6,6 +6,7 @@ var app = new Vue({
         counter: 0,
         show: false,
         age: 17,
+        name: '',
 
         list: [
             {name: 'Gabriela', age: '22'},
