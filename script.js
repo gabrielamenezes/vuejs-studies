@@ -5,14 +5,13 @@ var app = new Vue({
         message: 'Gabi Teste',
         counter: 0,
         show: false,
-        age: 19,
+        age: 17,
 
         list: [
-            {id: 1, item: 'Ovo'},
-            {id: 2, item: 'Farinha'},
-            {id: 3, item: 'Leite'},
-            {id: 4, item: 'Cenoura'},
-            {id: 5, item: 'Fermento'}
+            {name: 'Gabriela', age: '22'},
+            {name: 'Helena', age: '1'},
+            {name: 'Ana', age: '19'},
+            {name: 'Lucas', age: '8'}
 
         ],
 
@@ -29,14 +28,45 @@ var app = new Vue({
 
         
     },
+    created() {
+        
+        this.changeAge(14);
+    },
+
+    computed: {
+        isUnderAge() {
+            return this.age < 18
+        },
+
+        isOld() {
+            return this.age > 60;
+        },
+
+        adultUsers() {
+            return this.list.filter(el => el.age > 18)
+        }
+    },
 
     methods: {
         increase() {this.counter++},
         decrease() {this.counter--},
-        onShowClick() {this.show = !this.show}
+        onShowClick() {this.show = !this.show},
+
+
+        changeAge(value) {
+            
+            this.age = value
+            if(this.isUnderAge) {
+                console.log('é menor de 18')
+                return;
+            }
+            if(this.isOld) {
+                console.log('é velho')
+                return
+            }
+
+            console.log('É idade ok')
     },
 
-    computed: {
-        
-    }
-})
+    
+}})

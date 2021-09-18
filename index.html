@@ -17,12 +17,6 @@
         <button @click="decrease">Subtrair</button>
 
         <ul>
-            <li v-for="ingrediente in list" v-bind:key="ingrediente.id">
-                {{ingrediente.id}} - {{ingrediente.item}} 
-            </li>
-        </ul>
-
-        <ul>
             <li v-for="(linguagem,index) in linguagens" :key="linguagem.nome">
                 {{index}} - {{linguagem.nome}}
             </li>
@@ -33,8 +27,9 @@
             {{ show ? 'Esconder' : 'Mostrar' }}
         </button><br>
 
-        <span v-if="age < 18">Você precisa ser maior de 18 anos</span>
-        <span v-else-if="age > 60">Você é muito velho para beber</span>
+        <span v-if="isUnderAge">Você precisa ser maior de 18 anos</span>
+        <span v-else-if="isOld">Você é muito velho para beber</span>
+
         <template v-else>
             <span>Veja os itens</span>
             <ul>
@@ -43,6 +38,12 @@
                 <li>Chivas</li>
             </ul>
         </template>
+
+
+        <p>Pessoas maiores de 18</p>
+        <ul>
+            <li v-for="user in adultUsers">{{user.name}}</li>
+        </ul>
     </div>
 
       

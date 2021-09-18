@@ -28,10 +28,6 @@ resultado:
 ![alt text](.github/v-bind.png)
 
 
-* v-for:
-
-* v-if:
-
 ## Methods
 Os métodos declarados na instância do Vue, serão todos colocados dentro da chave _methods_, como o exemplo abaixo:
 
@@ -53,6 +49,15 @@ var app = new Vue({
 Os métodos não podem ser definidos como arrow functions 
 E o this deve ser sempre usado
 
+## Created
+created é uma função que é chamada assim que a instância do vue é criada. 
 
 ## Computed
-O computed vai ficar vendo se alguma coisa mudou, e ela retorna 
+- Computed é uma maneira fantástica de criar um dado a partir de outros dados. São inúmeras as situações e possibilidades
+* obter o total de uma lista.
+* uma nova lista com dados filtrados a partir de outra lista.
+* Criar uma validação simples com base em outros dados
+* obter um valor que está muito "longe" dentro de outro objeto
+* combinar, somar ou diminuir valores
+
+Computed é um sistema muito inteligente, ele só executa a função quando solicitado, depois faz um cache do valor, só atualizando caso os dados originais sofram alguma modificação.
